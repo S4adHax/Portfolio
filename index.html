@@ -6,6 +6,7 @@
 <title>Saad Ansari Mohammed — Front-End &amp; Web Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --ink: #0D1117;
@@ -36,6 +37,7 @@
     position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.05;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+
   .vignette{
     position: absolute; inset: 0; z-index: 2; pointer-events: none;
     background: radial-gradient(ellipse at 50% 45%, transparent 35%, rgba(13,17,23,0.6) 100%);
@@ -47,6 +49,7 @@
     padding: 28px 48px; font-size: 13px; letter-spacing: 0.06em;
     background: linear-gradient(to bottom, rgba(13,17,23,0.75), transparent);
   }
+
   header .mark{ color: var(--paper); font-weight: 500; font-size: 15px; letter-spacing: 0.02em; }
   header .mark .tag{ color: var(--signal); }
   nav{ display:flex; gap: 30px; }
@@ -54,79 +57,148 @@
   nav a:hover{ color: var(--signal); }
 
   .hero-text{ position:absolute; left: 48px; bottom: 68px; z-index: 10; max-width: 600px; }
+
   .eyebrow{
-    display:flex; align-items:center; gap: 10px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--signal); margin-bottom: 22px; opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 0.3s forwards;
+    display:flex; align-items:center; gap: 10px; font-size: 12px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--signal); margin-bottom: 22px; opacity: 0;
+    animation: rise 1s cubic-bezier(.16,1,.3,1) 0.3s forwards;
   }
+
   .eyebrow .dot{
     width: 6px; height: 6px; border-radius: 50%; background: var(--alert);
-    box-shadow: 0 0 12px 2px rgba(232,163,61,0.45); animation: blink 1.8s ease-in-out infinite;
+    box-shadow: 0 0 12px 2px rgba(232,163,61,0.45);
+    animation: blink 1.8s ease-in-out infinite;
   }
+
   h1{
-    font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(42px, 6.4vw, 82px);
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(42px, 6.4vw, 82px);
     line-height: 1.0; letter-spacing: -0.01em; color: var(--paper);
     opacity: 0; animation: rise 1.1s cubic-bezier(.16,1,.3,1) 0.5s forwards;
   }
+
   h1 em{ font-style: italic; font-weight: 600; color: var(--signal); }
+
   .role{
-    margin-top: 24px; font-size: 16.5px; color: var(--muted); line-height: 1.65; max-width: 470px;
+    margin-top: 24px; font-size: 16.5px; color: var(--muted);
+    line-height: 1.65; max-width: 470px;
     opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 0.75s forwards;
   }
+
   .role strong{ color: var(--paper); font-weight: 500; }
-  .hero-cta{ margin-top: 32px; display:flex; gap: 14px; align-items:center; opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 0.9s forwards; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding: 13px 22px; border-radius: 3px; font-size: 13px;
-    letter-spacing: 0.04em; text-decoration:none; transition: all .25s ease; border: 1px solid transparent;
+
+  .hero-cta{
+    margin-top: 32px; display:flex; gap: 14px; align-items:center;
+    opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 0.9s forwards;
   }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 13px 22px; border-radius: 3px; font-size: 13px;
+    letter-spacing: 0.04em; text-decoration:none;
+    transition: all .25s ease; border: 1px solid transparent;
+  }
+
   .btn-solid{ background: var(--signal); color: var(--ink); font-weight: 600; }
   .btn-solid:hover{ background: #67d6c8; transform: translateY(-1px); }
-  .btn-ghost{ border-color: var(--line); color: var(--paper); font-family:'IBM Plex Mono',monospace; font-size: 12.5px; }
+
+  .btn-ghost{
+    border-color: var(--line); color: var(--paper);
+    font-family:'IBM Plex Mono',monospace; font-size: 12.5px;
+  }
+
   .btn-ghost:hover{ border-color: var(--signal); color: var(--signal); }
 
   .scroll-cue{
-    position: absolute; right: 48px; bottom: 68px; z-index: 10; display:flex; flex-direction: column; align-items: center; gap: 12px;
-    color: var(--muted); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    position: absolute; right: 48px; bottom: 68px; z-index: 10;
+    display:flex; flex-direction: column; align-items: center; gap: 12px;
+    color: var(--muted); font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
     opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 1.1s forwards;
   }
-  .scroll-line{ width: 1px; height: 46px; background: linear-gradient(to bottom, var(--signal), transparent); animation: pulse-line 2.2s ease-in-out infinite; }
+
+  .scroll-line{
+    width: 1px; height: 46px;
+    background: linear-gradient(to bottom, var(--signal), transparent);
+    animation: pulse-line 2.2s ease-in-out infinite;
+  }
 
   .coords{
-    position: absolute; right: 48px; top: 92px; z-index: 10; font-size: 11px; color: var(--muted);
+    position: absolute; right: 48px; top: 92px; z-index: 10;
+    font-size: 11px; color: var(--muted);
     letter-spacing: 0.05em; text-align: right; line-height: 1.7;
     opacity: 0; animation: rise 1s cubic-bezier(.16,1,.3,1) 1.2s forwards;
   }
+
   .coords span{ color: var(--signal); }
 
-  @keyframes rise{ from{ opacity:0; transform: translateY(18px);} to{ opacity:1; transform: translateY(0);} }
-  @keyframes pulse-line{ 0%,100%{opacity:.3;} 50%{opacity:1;} }
-  @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
-  @keyframes cursor-blink{ 0%,100%{opacity:1;} 50%{opacity:0;} }
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(18px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  @keyframes pulse-line{
+    0%,100%{ opacity:.3; }
+    50%{ opacity:1; }
+  }
+
+  @keyframes blink{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.35; }
+  }
+
+  @keyframes cursor-blink{
+    0%,100%{ opacity:1; }
+    50%{ opacity:0; }
+  }
 
   /* ---------- SHARED SECTION STYLES ---------- */
   main{ position:relative; z-index: 5; background: var(--ink); }
   section{ padding: 130px 48px; max-width: 1180px; margin: 0 auto; }
   section + section{ border-top: 1px solid var(--line); }
-  .eyebrow-label{ font-size: 12.5px; color: var(--signal); letter-spacing: 0.04em; margin-bottom: 18px; }
-  .section-head{ max-width: 640px; margin-bottom: 56px; }
-  .section-head h2{
-    font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 46px); line-height: 1.12; color: var(--paper);
+
+  .eyebrow-label{
+    font-size: 12.5px; color: var(--signal);
+    letter-spacing: 0.04em; margin-bottom: 18px;
   }
+
+  .section-head{ max-width: 640px; margin-bottom: 56px; }
+
+  .section-head h2{
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(30px, 4vw, 46px); line-height: 1.12;
+    color: var(--paper);
+  }
+
   .section-head h2 em{ font-style: italic; font-weight: 600; color: var(--signal); }
 
-  .reveal{ opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  .reveal{
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1),
+                transform .8s cubic-bezier(.16,1,.3,1);
+  }
+
   .reveal.in-view{ opacity: 1; transform: translateY(0); }
 
-  /* ---------- CODE BLOCK (used in About + Contact) ---------- */
+  /* ---------- CODE BLOCK ---------- */
   .code-block{
-    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
-    padding: 26px 28px; font-size: 14px; line-height: 2; overflow: hidden;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 26px 28px;
+    font-size: 14px; line-height: 2; overflow: hidden;
   }
+
   .code-block .cb-top{ display:flex; gap:7px; margin-bottom:16px; }
   .code-block .cb-dot{ width:9px; height:9px; border-radius:50%; }
-  .code-block .cb-dot.r{ background:#E8746A; } .code-block .cb-dot.y{ background:#E8C34A; } .code-block .cb-dot.g{ background:#52C7B8; }
+  .code-block .cb-dot.r{ background:#E8746A; }
+  .code-block .cb-dot.y{ background:#E8C34A; }
+  .code-block .cb-dot.g{ background:#52C7B8; }
+
   .code-line{
-    white-space: pre; clip-path: inset(0 100% 0 0); transition: clip-path .6s steps(28,end);
+    white-space: pre; clip-path: inset(0 100% 0 0);
+    transition: clip-path .6s steps(28,end);
   }
+
   .reveal.in-view .code-line{ clip-path: inset(0 0 0 0); }
   .reveal.in-view .code-line:nth-child(2){ transition-delay: .18s; }
   .reveal.in-view .code-line:nth-child(3){ transition-delay: .36s; }
@@ -135,6 +207,7 @@
   .reveal.in-view .code-line:nth-child(6){ transition-delay: .90s; }
   .reveal.in-view .code-line:nth-child(7){ transition-delay: 1.08s; }
   .reveal.in-view .code-line:nth-child(8){ transition-delay: 1.26s; }
+
   .tok-kw{ color: var(--signal); }
   .tok-key{ color: var(--alert); }
   .tok-str{ color: var(--paper); }
@@ -142,84 +215,183 @@
   .tok-mut{ color: var(--muted); }
 
   /* ---------- ABOUT ---------- */
-  #about .about-grid{ display:grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items:start; }
-  #about p{ font-size: 17px; line-height: 1.85; color: var(--muted); margin-bottom: 20px; }
+  #about .about-grid{
+    display:grid; grid-template-columns: 1.15fr 1fr;
+    gap: 64px; align-items:start;
+  }
+
+  #about p{
+    font-size: 17px; line-height: 1.85;
+    color: var(--muted); margin-bottom: 20px;
+  }
+
   #about p strong{ color: var(--paper); font-weight: 500; }
 
   /* ---------- SKILLS ---------- */
-  .cmd-line{ display:flex; align-items:center; gap:8px; margin-bottom:44px; font-size:13.5px; color: var(--muted); }
+  .cmd-line{
+    display:flex; align-items:center; gap:8px;
+    margin-bottom:44px; font-size:13.5px; color: var(--muted);
+  }
+
   .cmd-line .prompt{ color: var(--signal); }
-  .cmd-line .caret{ display:inline-block; width:8px; height:15px; background: var(--signal); animation: cursor-blink 1s step-end infinite; }
+
+  .cmd-line .caret{
+    display:inline-block; width:8px; height:15px;
+    background: var(--signal); animation: cursor-blink 1s step-end infinite;
+  }
+
   .skill-groups{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 40px 60px; }
+
   .skill-group .g-label{
-    font-size: 12px; letter-spacing: 0.08em; text-transform:uppercase; color: var(--muted);
+    font-size: 12px; letter-spacing: 0.08em;
+    text-transform:uppercase; color: var(--muted);
     margin-bottom: 12px; display:flex; align-items:center; gap: 10px;
   }
-  .skill-group .g-label::after{ content:""; flex:1; height:1px; background: var(--line); }
-  .bar{ height:2px; background: var(--line); margin-bottom:14px; overflow:hidden; border-radius:2px; }
-  .bar-fill{ height:100%; width:0; background: var(--signal); transition: width 1.1s cubic-bezier(.16,1,.3,1) .15s; }
+
+  .skill-group .g-label::after{
+    content:""; flex:1; height:1px; background: var(--line);
+  }
+
+  .bar{
+    height:2px; background: var(--line);
+    margin-bottom:14px; overflow:hidden; border-radius:2px;
+  }
+
+  .bar-fill{
+    height:100%; width:0; background: var(--signal);
+    transition: width 1.1s cubic-bezier(.16,1,.3,1) .15s;
+  }
+
   .reveal.in-view .bar-fill{ width:100%; }
   .chip-row{ display:flex; flex-wrap:wrap; gap: 9px; }
+
   .chip{
-    font-size: 12.5px; padding: 7px 12px; border-radius: 3px; border: 1px solid var(--line);
-    color: var(--paper); background: var(--panel); transition: border-color .2s ease, color .2s ease;
+    font-size: 12.5px; padding: 7px 12px; border-radius: 3px;
+    border: 1px solid var(--line); color: var(--paper);
+    background: var(--panel);
+    transition: border-color .2s ease, color .2s ease;
   }
+
   .chip:hover{ border-color: var(--signal); color: var(--signal); }
 
-  /* ---------- EXPERIENCE (git log style) ---------- */
+  /* ---------- EXPERIENCE ---------- */
   .timeline-item{ display:grid; grid-template-columns: 220px 1fr; gap: 40px; }
-  .timeline-item .t-side .role-title{ font-size: 15px; color: var(--paper); font-weight:500; margin-bottom:6px; }
+
+  .timeline-item .t-side .role-title{
+    font-size: 15px; color: var(--paper);
+    font-weight:500; margin-bottom:6px;
+  }
+
   .timeline-item .t-side .role-meta{ font-size: 12.5px; color: var(--muted); }
   .git-log{ position:relative; padding-left: 26px; }
+
   .git-rail{
     position:absolute; left:2px; top:6px; bottom:6px; width:1px;
     background: linear-gradient(var(--signal), rgba(82,199,184,0));
-    transform: scaleY(0); transform-origin: top; transition: transform 1.1s cubic-bezier(.16,1,.3,1) .1s;
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 1.1s cubic-bezier(.16,1,.3,1) .1s;
   }
+
   .reveal.in-view .git-rail{ transform: scaleY(1); }
   .git-log ul{ list-style:none; display:flex; flex-direction:column; gap: 16px; }
-  .git-log li{ font-size: 15px; line-height: 1.6; color: var(--muted); position:relative;
-    opacity:0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; }
+
+  .git-log li{
+    font-size: 15px; line-height: 1.6; color: var(--muted);
+    position:relative; opacity:0; transform: translateX(-8px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+
   .reveal.in-view .git-log li{ opacity:1; transform: translateX(0); }
   .reveal.in-view .git-log li:nth-child(1){ transition-delay:.15s; }
   .reveal.in-view .git-log li:nth-child(2){ transition-delay:.30s; }
   .reveal.in-view .git-log li:nth-child(3){ transition-delay:.45s; }
   .reveal.in-view .git-log li:nth-child(4){ transition-delay:.60s; }
   .reveal.in-view .git-log li:nth-child(5){ transition-delay:.75s; }
+
   .git-log li::before{
-    content:""; position:absolute; left:-26px; top:7px; width:7px; height:7px; border-radius:50%;
-    background: var(--signal); box-shadow: 0 0 0 3px rgba(82,199,184,0.15);
+    content:""; position:absolute; left:-26px; top:7px;
+    width:7px; height:7px; border-radius:50%;
+    background: var(--signal);
+    box-shadow: 0 0 0 3px rgba(82,199,184,0.15);
   }
+
   .git-log .hash{ color: var(--signal); font-size: 12px; margin-right: 8px; }
 
-  /* ---------- PROJECTS (browser window chrome) ---------- */
-  .project-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .project-card{ background: var(--ink); display:flex; flex-direction:column; transition: background .3s ease; }
+  /* ---------- PROJECTS ---------- */
+  .project-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line);
+  }
+
+  .project-card{
+    background: var(--ink); display:flex; flex-direction:column;
+    transition: background .3s ease;
+  }
+
   .project-card:hover{ background: var(--panel); }
-  .browser-bar{ display:flex; align-items:center; gap:10px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+
+  .browser-bar{
+    display:flex; align-items:center; gap:10px;
+    padding: 12px 16px; border-bottom: 1px solid var(--line);
+  }
+
   .browser-bar .dots{ display:flex; gap:6px; }
   .browser-bar .dots span{ width:8px; height:8px; border-radius:50%; }
-  .browser-bar .dots span:nth-child(1){ background:#E8746A; } .browser-bar .dots span:nth-child(2){ background:#E8C34A; } .browser-bar .dots span:nth-child(3){ background:#52C7B8; }
-  .browser-bar .url{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; color: var(--muted); background: var(--ink);
-    border: 1px solid var(--line); border-radius: 3px; padding: 4px 10px; flex:1; overflow:hidden; white-space:nowrap;
-  }
-  .browser-bar .url .blink{ display:inline-block; width:6px; height:11px; background: var(--signal); vertical-align:middle; margin-left:2px; animation: cursor-blink 1.1s step-end infinite; }
-  .project-body{ padding: 26px 30px 30px; display:flex; flex-direction:column; gap: 14px; flex:1; }
-  .project-card .p-meta{ font-size: 11.5px; color: var(--muted); letter-spacing: 0.06em; }
-  .project-card h3{ font-family:'Fraunces', serif; font-weight: 500; font-size: 21px; color: var(--paper); }
-  .project-card p{ font-size: 14px; line-height: 1.6; color: var(--muted); flex: 1; }
-  .p-tags{ display:flex; flex-wrap:wrap; gap: 7px; margin-top: 4px; }
-  .p-tags span{ font-size: 11px; padding: 4px 9px; border-radius: 2px; background: var(--panel-2); color: var(--signal); letter-spacing: 0.02em; }
+  .browser-bar .dots span:nth-child(1){ background:#E8746A; }
+  .browser-bar .dots span:nth-child(2){ background:#E8C34A; }
+  .browser-bar .dots span:nth-child(3){ background:#52C7B8; }
 
-  /* ---------- EDUCATION (directory tree) + CERTS ---------- */
+  .browser-bar .url{
+    font-family:'IBM Plex Mono',monospace; font-size:11px;
+    color: var(--muted); background: var(--ink);
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 4px 10px; flex:1; overflow:hidden; white-space:nowrap;
+  }
+
+  .browser-bar .url .blink{
+    display:inline-block; width:6px; height:11px;
+    background: var(--signal); vertical-align:middle; margin-left:2px;
+    animation: cursor-blink 1.1s step-end infinite;
+  }
+
+  .project-body{
+    padding: 26px 30px 30px; display:flex;
+    flex-direction:column; gap: 14px; flex:1;
+  }
+
+  .project-card .p-meta{
+    font-size: 11.5px; color: var(--muted); letter-spacing: 0.06em;
+  }
+
+  .project-card h3{
+    font-family:'Fraunces', serif; font-weight: 500;
+    font-size: 21px; color: var(--paper);
+  }
+
+  .project-card p{
+    font-size: 14px; line-height: 1.6;
+    color: var(--muted); flex: 1;
+  }
+
+  .p-tags{ display:flex; flex-wrap:wrap; gap: 7px; margin-top: 4px; }
+
+  .p-tags span{
+    font-size: 11px; padding: 4px 9px; border-radius: 2px;
+    background: var(--panel-2); color: var(--signal);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- EDUCATION + CERTIFICATIONS ---------- */
   .split-two{ display:grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   .tree-block{ font-size: 14.5px; line-height: 2.1; }
   .tree-root{ color: var(--signal); margin-bottom: 4px; }
+
   .tree-line{
-    display:flex; gap: 10px; align-items:baseline; clip-path: inset(0 100% 0 0);
+    display:flex; gap: 10px; align-items:baseline;
+    clip-path: inset(0 100% 0 0);
     transition: clip-path .6s steps(26,end);
   }
+
   .reveal.in-view .tree-line{ clip-path: inset(0 0 0 0); }
   .reveal.in-view .tree-line:nth-child(2){ transition-delay:.15s; }
   .reveal.in-view .tree-line:nth-child(3){ transition-delay:.32s; }
@@ -229,43 +401,93 @@
   .tree-line .school{ color: var(--muted); font-size: 12.5px; }
 
   .cert-item{
-    padding: 18px 0; border-bottom: 1px solid var(--line); display:flex; justify-content:space-between; gap: 16px; align-items:baseline;
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    display:flex; justify-content:space-between;
+    gap: 16px; align-items:baseline;
   }
-  .cert-item .c-name{ font-size: 14.5px; color: var(--paper); display:flex; align-items:center; gap:10px; }
+
+  .cert-item .c-name{
+    font-size: 14.5px; color: var(--paper);
+    display:flex; align-items:center; gap:10px;
+  }
+
   .cert-item .check{ color: var(--signal); font-size: 13px; }
-  .cert-item .c-year{ font-size: 12px; color: var(--signal); font-family:'IBM Plex Mono',monospace; white-space:nowrap; }
+
+  .cert-item .c-year{
+    font-size: 12px; color: var(--signal);
+    font-family:'IBM Plex Mono',monospace; white-space:nowrap;
+  }
 
   /* ---------- CONTACT ---------- */
   #contact{ padding-bottom: 90px; }
-  .contact-inner{ display:flex; flex-direction:column; align-items:flex-start; gap: 34px; }
+
+  .contact-inner{
+    display:flex; flex-direction:column;
+    align-items:flex-start; gap: 34px;
+  }
+
   .contact-inner h2{
-    font-family:'Fraunces', serif; font-weight:300; font-size: clamp(34px, 5.2vw, 62px); line-height: 1.05; color: var(--paper); max-width: 720px;
+    font-family:'Fraunces', serif; font-weight:300;
+    font-size: clamp(34px, 5.2vw, 62px);
+    line-height: 1.05; color: var(--paper); max-width: 720px;
   }
-  .contact-inner h2 em{ font-style: italic; font-weight: 600; color: var(--signal); }
+
+  .contact-inner h2 em{
+    font-style: italic; font-weight: 600; color: var(--signal);
+  }
+
   .term-line{
-    font-family:'IBM Plex Mono',monospace; font-size: 15px; color: var(--muted); background: var(--panel);
-    border:1px solid var(--line); border-radius: 4px; padding: 16px 20px; display:flex; align-items:center; gap: 10px; flex-wrap: wrap;
-    clip-path: inset(0 100% 0 0); transition: clip-path 1s steps(40,end) .1s;
+    font-family:'IBM Plex Mono',monospace; font-size: 15px;
+    color: var(--muted); background: var(--panel);
+    border:1px solid var(--line); border-radius: 4px;
+    padding: 16px 20px; display:flex; align-items:center;
+    gap: 10px; flex-wrap: wrap;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s steps(40,end) .1s;
   }
+
   .reveal.in-view .term-line{ clip-path: inset(0 0 0 0); }
   .term-line .prompt{ color: var(--signal); }
-  .term-line a{ color: var(--paper); text-decoration:none; border-bottom: 1px solid var(--line); }
+
+  .term-line a{
+    color: var(--paper); text-decoration:none;
+    border-bottom: 1px solid var(--line);
+  }
+
   .term-line a:hover{ color: var(--signal); border-color: var(--signal); }
-  .term-line .blink{ display:inline-block; width:8px; height:15px; background: var(--signal); animation: cursor-blink 1s step-end infinite; }
-  .contact-meta{ display:flex; gap: 40px; flex-wrap:wrap; font-size: 13px; color: var(--muted); }
-  .contact-meta .k{ color: var(--signal); display:block; font-size: 11px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; }
+
+  .term-line .blink{
+    display:inline-block; width:8px; height:15px;
+    background: var(--signal); animation: cursor-blink 1s step-end infinite;
+  }
+
+  .contact-meta{
+    display:flex; gap: 40px; flex-wrap:wrap;
+    font-size: 13px; color: var(--muted);
+  }
+
+  .contact-meta .k{
+    color: var(--signal); display:block; font-size: 11px;
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;
+  }
 
   footer{
-    padding: 30px 48px; border-top: 1px solid var(--line); display:flex; justify-content:space-between;
-    font-size: 12px; color: var(--muted); font-family:'IBM Plex Mono',monospace;
+    padding: 30px 48px; border-top: 1px solid var(--line);
+    display:flex; justify-content:space-between;
+    font-size: 12px; color: var(--muted);
+    font-family:'IBM Plex Mono',monospace;
   }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
-    .eyebrow, h1, .role, .hero-cta, .scroll-cue, .coords{ animation:none; opacity:1; }
+    .eyebrow, h1, .role, .hero-cta, .scroll-cue, .coords{
+      animation:none; opacity:1;
+    }
     .scroll-line, .eyebrow .dot, .caret, .blink{ animation:none; }
     .reveal{ opacity:1; transform:none; transition:none; }
-    .code-line, .tree-line, .term-line{ clip-path: inset(0 0 0 0); transition:none; }
+    .code-line, .tree-line, .term-line{
+      clip-path: inset(0 0 0 0); transition:none;
+    }
     .git-rail{ transform: scaleY(1); transition:none; }
     .git-log li{ opacity:1; transform:none; transition:none; }
     .bar-fill{ width:100%; transition:none; }
@@ -286,11 +508,13 @@
     footer{ flex-direction:column; gap:8px; padding: 26px 24px; }
   }
 
-  a:focus-visible, button:focus-visible{ outline: 2px solid var(--signal); outline-offset: 4px; }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--signal); outline-offset: 4px;
+  }
 </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="mark mono">&lt;SAM<span class="tag">/</span>&gt;</div>
   <nav class="mono">
@@ -306,16 +530,31 @@
   <div class="vignette"></div>
 
   <div class="coords mono">
-    FARMINGTON, MI <span>/</span><br>48336 <span>·</span> MICHIGAN, USA
+    FARMINGTON, MI <span>/</span><br>
+    48336 <span>·</span> MICHIGAN, USA
   </div>
 
   <div class="hero-text">
-    <div class="eyebrow mono"><span class="dot"></span> STATUS · OPEN TO WORK</div>
+    <div class="eyebrow mono">
+      <span class="dot"></span> STATUS · OPEN TO WORK
+    </div>
+
     <h1>Web software,<br><em>built to work.</em></h1>
-    <p class="role">I'm <strong>Saad Ansari Mohammed</strong>, a front-end and web developer building responsive, database-driven applications with JavaScript, HTML5, CSS3, PHP, and MySQL. I integrate APIs, test browser-compatible layouts, and troubleshoot issues for smooth client operations.</p>
+
+    <p class="role">
+      I'm <strong>Saad Ansari Mohammed</strong>, a front-end and web
+      developer building responsive, database-driven applications with
+      JavaScript, HTML5, CSS3, PHP, and MySQL. I integrate APIs, test
+      browser-compatible layouts, and troubleshoot issues for smooth
+      client operations.
+    </p>
+
     <div class="hero-cta">
       <a href="#work" class="btn btn-solid">View my work</a>
-      <a href="https://drive.google.com/file/d/1dhrYVsqCpoVUhDA_8O9vkCCzciDev5Gf/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View résumé</a>
+      <a href="https://drive.google.com/file/d/1dhrYVsqCpoVUhDA_8O9vkCCzciDev5Gf/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-ghost">View résumé</a>
     </div>
   </div>
 
@@ -326,20 +565,38 @@
 </section>
 
 <main>
-
   <section id="about">
     <div class="eyebrow-label mono reveal">// about</div>
+
     <div class="about-grid">
       <div class="reveal">
         <div class="section-head" style="margin-bottom:28px;">
           <h2>From requirements<br>to <em>reliable</em> web software.</h2>
         </div>
-        <p>I build <strong>responsive, database-driven web applications</strong> with JavaScript, HTML5, CSS3, PHP, and MySQL. My work covers requirements review, feature development, testing, deployment support, maintenance, and <strong>technical documentation</strong>.</p>
-        <p>I connect front-end pages to reusable PHP modules, MySQL CRUD workflows, and REST APIs. I also create task-specific AI agents and structured prompt workflows to support requirements analysis, debugging, test-case preparation, and documentation.</p>
+
+        <p>
+          I build <strong>responsive, database-driven web applications</strong>
+          with JavaScript, HTML5, CSS3, PHP, and MySQL. My work covers
+          requirements review, feature development, testing, deployment
+          support, maintenance, and <strong>technical documentation</strong>.
+        </p>
+
+        <p>
+          I connect front-end pages to reusable PHP modules, MySQL CRUD
+          workflows, and REST APIs. I also create task-specific AI agents
+          and structured prompt workflows to support requirements analysis,
+          debugging, test-case preparation, and documentation.
+        </p>
       </div>
+
       <div class="reveal">
         <div class="code-block mono">
-          <div class="cb-top"><span class="cb-dot r"></span><span class="cb-dot y"></span><span class="cb-dot g"></span></div>
+          <div class="cb-top">
+            <span class="cb-dot r"></span>
+            <span class="cb-dot y"></span>
+            <span class="cb-dot g"></span>
+          </div>
+
           <div class="code-line"><span class="tok-kw">const</span> <span class="tok-pn">engineer</span> = {</div>
           <div class="code-line">&nbsp;&nbsp;<span class="tok-key">name:</span> <span class="tok-str">"Saad Ansari Mohammed"</span>,</div>
           <div class="code-line">&nbsp;&nbsp;<span class="tok-key">location:</span> <span class="tok-str">"Farmington, MI 48336"</span>,</div>
@@ -355,65 +612,114 @@
 
   <section id="skills">
     <div class="eyebrow-label mono reveal">// stack</div>
+
     <div class="section-head reveal">
       <h2>Tools I <em>reach for.</em></h2>
     </div>
-    <div class="cmd-line mono reveal"><span class="prompt">$</span> ls ~/skills<span class="caret"></span></div>
+
+    <div class="cmd-line mono reveal">
+      <span class="prompt">$</span>
+      ls ~/skills<span class="caret"></span>
+    </div>
+
     <div class="skill-groups">
       <div class="skill-group reveal">
         <div class="g-label mono">Languages</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">HTML5</span><span class="chip">CSS3</span>
+          <span class="chip">PHP</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">Frontend Development</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Responsive Design</span><span class="chip">CSS Grid</span><span class="chip">Flexbox</span><span class="chip">DOM Manipulation</span><span class="chip">Three.js</span><span class="chip">Cross-Browser Testing</span>
+          <span class="chip">Responsive Design</span>
+          <span class="chip">CSS Grid</span>
+          <span class="chip">Flexbox</span>
+          <span class="chip">DOM Manipulation</span>
+          <span class="chip">Three.js</span>
+          <span class="chip">Cross-Browser Testing</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">AI-Assisted Development</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Prompt Engineering</span><span class="chip">AI Agents</span><span class="chip">Basic Prompt Writing</span><span class="chip">AI-Assisted Debugging</span><span class="chip">Test-Case Generation</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">AI Agents</span>
+          <span class="chip">Basic Prompt Writing</span>
+          <span class="chip">AI-Assisted Debugging</span>
+          <span class="chip">Test-Case Generation</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">APIs &amp; Back End</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Fetch API</span><span class="chip">async/await</span><span class="chip">JSON</span><span class="chip">REST API Integration</span><span class="chip">CORS Management</span><span class="chip">PHP</span>
+          <span class="chip">Fetch API</span>
+          <span class="chip">async/await</span>
+          <span class="chip">JSON</span>
+          <span class="chip">REST API Integration</span>
+          <span class="chip">CORS Management</span>
+          <span class="chip">PHP</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">Databases</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">MySQL</span><span class="chip">SQL</span><span class="chip">CRUD Operations</span><span class="chip">Query Writing</span><span class="chip">Data Validation</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">SQL</span>
+          <span class="chip">CRUD Operations</span>
+          <span class="chip">Query Writing</span>
+          <span class="chip">Data Validation</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">Testing &amp; Troubleshooting</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Functional Testing</span><span class="chip">Defect Investigation</span><span class="chip">Database Validation</span><span class="chip">Responsive Layout Testing</span><span class="chip">Issue Documentation</span>
+          <span class="chip">Functional Testing</span>
+          <span class="chip">Defect Investigation</span>
+          <span class="chip">Database Validation</span>
+          <span class="chip">Responsive Layout Testing</span>
+          <span class="chip">Issue Documentation</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">Tools &amp; Platforms</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">XAMPP</span><span class="chip">Apache</span><span class="chip">Chrome DevTools</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">XAMPP</span>
+          <span class="chip">Apache</span>
+          <span class="chip">Chrome DevTools</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
         <div class="g-label mono">Practices</div>
         <div class="bar"><div class="bar-fill"></div></div>
         <div class="chip-row">
-          <span class="chip">Software Development Lifecycle</span><span class="chip">Requirements Analysis</span><span class="chip">Deployment Support</span><span class="chip">Maintenance</span><span class="chip">Technical Documentation</span><span class="chip">Web Performance Optimization</span>
+          <span class="chip">Software Development Lifecycle</span>
+          <span class="chip">Requirements Analysis</span>
+          <span class="chip">Deployment Support</span>
+          <span class="chip">Maintenance</span>
+          <span class="chip">Technical Documentation</span>
+          <span class="chip">Web Performance Optimization</span>
         </div>
       </div>
     </div>
@@ -421,38 +727,95 @@
 
   <section id="experience">
     <div class="eyebrow-label mono reveal">// experience</div>
+
     <div class="section-head reveal">
       <h2>Where I've <em>worked.</em></h2>
     </div>
+
     <div class="timeline-item reveal" style="margin-bottom:64px;">
       <div class="t-side">
         <div class="role-title">Web Developer</div>
-        <div class="role-meta mono">Pentangle Tech Services LLC<br>Livonia, Michigan · May 2026</div>
+        <div class="role-meta mono">
+          Pentangle Tech Services LLC<br>
+          Livonia, Michigan · May 2026
+        </div>
       </div>
+
       <div class="git-log">
         <div class="git-rail"></div>
         <ul>
-          <li><span class="hash mono">a1f9c3e</span>Worked on web applications from requirements review and development through testing, troubleshooting, deployment support, and ongoing maintenance.</li>
-          <li><span class="hash mono">7d2e8b1</span>Built responsive page components with HTML5, CSS3, and JavaScript for consistent desktop and mobile experiences.</li>
-          <li><span class="hash mono">4c6f0a9</span>Wrote and refined MySQL queries to validate application data, investigate inconsistencies, and keep web-interface information accurate.</li>
-          <li><span class="hash mono">e91b3d4</span>Created task-specific AI agents and prompt workflows for requirements analysis, debugging, test-case preparation, and technical documentation.</li>
-          <li><span class="hash mono">2fa87c0</span>Traced defects across frontend behavior, application logic, and database records, then documented causes, solutions, and test results.</li>
+          <li>
+            <span class="hash mono">a1f9c3e</span>
+            Worked on web applications from requirements review and
+            development through testing, troubleshooting, deployment
+            support, and ongoing maintenance.
+          </li>
+          <li>
+            <span class="hash mono">7d2e8b1</span>
+            Built responsive page components with HTML5, CSS3, and
+            JavaScript for consistent desktop and mobile experiences.
+          </li>
+          <li>
+            <span class="hash mono">4c6f0a9</span>
+            Wrote and refined MySQL queries to validate application data,
+            investigate inconsistencies, and keep web-interface
+            information accurate.
+          </li>
+          <li>
+            <span class="hash mono">e91b3d4</span>
+            Created task-specific AI agents and prompt workflows for
+            requirements analysis, debugging, test-case preparation,
+            and technical documentation.
+          </li>
+          <li>
+            <span class="hash mono">2fa87c0</span>
+            Traced defects across frontend behavior, application logic,
+            and database records, then documented causes, solutions,
+            and test results.
+          </li>
         </ul>
       </div>
     </div>
+
     <div class="timeline-item reveal">
       <div class="t-side">
         <div class="role-title">Web Developer</div>
-        <div class="role-meta mono">Creatick Informatics<br>Hyderabad, Telangana, India<br>Sep 2022 – Jan 2024</div>
+        <div class="role-meta mono">
+          Creatick Informatics<br>
+          Hyderabad, Telangana, India<br>
+          Sep 2022 – Jan 2024
+        </div>
       </div>
+
       <div class="git-log">
         <div class="git-rail"></div>
         <ul>
-          <li><span class="hash mono">b6a24d8</span>Developed database-driven web applications using PHP, MySQL, HTML5, CSS3, and JavaScript from business and user requirements.</li>
-          <li><span class="hash mono">9f31e72</span>Built reusable PHP components and MySQL CRUD functionality for storing, retrieving, validating, and updating application data.</li>
-          <li><span class="hash mono">c84d5a1</span>Developed responsive layouts using CSS Grid and Flexbox for seamless experiences across devices.</li>
-          <li><span class="hash mono">3e7b90f</span>Delivered on-site client support, resolving technical issues to maintain operational continuity.</li>
-          <li><span class="hash mono">d25a61c</span>Tested functionality, database operations, responsive layouts, and browser compatibility while documenting application changes and known issues.</li>
+          <li>
+            <span class="hash mono">b6a24d8</span>
+            Developed database-driven web applications using PHP, MySQL,
+            HTML5, CSS3, and JavaScript from business and user requirements.
+          </li>
+          <li>
+            <span class="hash mono">9f31e72</span>
+            Built reusable PHP components and MySQL CRUD functionality
+            for storing, retrieving, validating, and updating application data.
+          </li>
+          <li>
+            <span class="hash mono">c84d5a1</span>
+            Developed responsive layouts using CSS Grid and Flexbox
+            for seamless experiences across devices.
+          </li>
+          <li>
+            <span class="hash mono">3e7b90f</span>
+            Delivered on-site client support, resolving technical issues
+            to maintain operational continuity.
+          </li>
+          <li>
+            <span class="hash mono">d25a61c</span>
+            Tested functionality, database operations, responsive layouts,
+            and browser compatibility while documenting application
+            changes and known issues.
+          </li>
         </ul>
       </div>
     </div>
@@ -460,35 +823,104 @@
 
   <section id="work">
     <div class="eyebrow-label mono reveal">// work</div>
+
     <div class="section-head reveal">
       <h2>Things I've <em>built.</em></h2>
     </div>
+
     <div class="project-grid reveal">
       <div class="project-card">
-        <div class="browser-bar"><div class="dots"><span></span><span></span><span></span></div><div class="url mono">Ansari Creative Design<span class="blink"></span></div></div>
+        <div class="browser-bar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url mono">
+            Ansari Creative Design<span class="blink"></span>
+          </div>
+        </div>
+
         <div class="project-body">
           <div class="p-meta mono">CONSTRUCTION WEBSITE · CONTACT API</div>
           <h3>Ansari Creative Design</h3>
-          <p><strong>Construction Website and Contact API.</strong> Built a responsive construction website with mobile navigation, active-section highlighting, an image gallery, and a light/dark theme saved in localStorage. Connected the inquiry form to an Express endpoint using Fetch and JSON, with sending, success, and error feedback. The API validates required fields, manages allowed-origin CORS, and delivers SMTP email through Nodemailer.</p>
-          <div class="p-tags mono"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Nodemailer</span></div>
+
+          <p>
+            <strong>Construction Website and Contact API.</strong>
+            Built a responsive construction website with mobile navigation,
+            active-section highlighting, an image gallery, and a light/dark
+            theme saved in localStorage. Connected the inquiry form to an
+            Express endpoint using Fetch and JSON, with sending, success,
+            and error feedback. The API validates required fields, manages
+            allowed-origin CORS, and delivers SMTP email through Nodemailer.
+          </p>
+
+          <div class="p-tags mono">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>Nodemailer</span>
+          </div>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="browser-bar"><div class="dots"><span></span><span></span><span></span></div><div class="url mono">MountView Farmhouse<span class="blink"></span></div></div>
+        <div class="browser-bar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url mono">
+            MountView Farmhouse<span class="blink"></span>
+          </div>
+        </div>
+
         <div class="project-body">
           <div class="p-meta mono">PROPERTY WEBSITE · BOOKING INQUIRIES</div>
           <h3>MountView Farmhouse</h3>
-          <p><strong>Interactive Property and Booking Website.</strong> Created a responsive property website with accommodation details, photos, location information, and a booking inquiry form. Calculated price estimates from stay length and guest count, then assembled a prefilled WhatsApp booking request. Built an interactive Three.js landscape with scroll-driven changes, pointer interaction, resize handling, and responsive and reduced-motion CSS.</p>
-          <div class="p-tags mono"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span></div>
+
+          <p>
+            <strong>Interactive Property and Booking Website.</strong>
+            Created a responsive property website with accommodation details,
+            photos, location information, and a booking inquiry form.
+            Calculated price estimates from stay length and guest count,
+            then assembled a prefilled WhatsApp booking request.
+            Built an interactive Three.js landscape with scroll-driven
+            changes, pointer interaction, resize handling, and responsive
+            and reduced-motion CSS.
+          </p>
+
+          <div class="p-tags mono">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Three.js</span>
+          </div>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="browser-bar"><div class="dots"><span></span><span></span><span></span></div><div class="url mono">Developer Portfolio<span class="blink"></span></div></div>
+        <div class="browser-bar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url mono">
+            Developer Portfolio<span class="blink"></span>
+          </div>
+        </div>
+
         <div class="project-body">
           <div class="p-meta mono">DEVELOPER PORTFOLIO · INTERACTIVE SHOWCASE</div>
           <h3>Developer Portfolio</h3>
-          <p><strong>Interactive Professional Showcase.</strong> Designed a responsive portfolio presenting technical skills, work experience, and selected projects through a cohesive developer-themed interface. Created an animated Three.js hero with a custom canvas-textured code card, pointer interaction, resize-aware rendering, and capped device pixel ratio.</p>
-          <div class="p-tags mono"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span></div>
+
+          <p>
+            <strong>Interactive Professional Showcase.</strong>
+            Designed a responsive portfolio presenting technical skills,
+            work experience, and selected projects through a cohesive
+            developer-themed interface. Created an animated Three.js hero
+            with a custom canvas-textured code card, pointer interaction,
+            resize-aware rendering, and capped device pixel ratio.
+          </p>
+
+          <div class="p-tags mono">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Three.js</span>
+          </div>
         </div>
       </div>
     </div>
@@ -496,62 +928,151 @@
 
   <section id="education">
     <div class="eyebrow-label mono reveal">// education &amp; training</div>
+
     <div class="split-two">
       <div class="reveal">
         <div class="section-head" style="margin-bottom:24px;">
           <h2>Where it <em>started.</em></h2>
         </div>
+
         <div class="tree-block mono">
           <div class="tree-root">~/education</div>
-          <div class="tree-line"><span class="tree-branch">├──</span><span class="degree">M.S. Information Technology</span></div>
-          <div class="tree-line" style="padding-left:26px;"><span class="school">Trine University · Indiana, USA</span></div>
-          <div class="tree-line"><span class="tree-branch">├──</span><span class="degree">B.S. Computer Science Engineering</span></div>
-          <div class="tree-line" style="padding-left:26px;"><span class="school">Jawaharlal Nehru Technological University · Hyderabad, India</span></div>
-          <div class="tree-line"><span class="tree-branch">└──</span><span class="degree">Diploma in Computer Engineering</span></div>
-          <div class="tree-line" style="padding-left:26px;"><span class="school">T.R.R. College of Technology · Hyderabad, India</span></div>
+
+          <div class="tree-line">
+            <span class="tree-branch">├──</span>
+            <span class="degree">M.S. Information Technology</span>
+          </div>
+          <div class="tree-line" style="padding-left:26px;">
+            <span class="school">Trine University · Indiana, USA</span>
+          </div>
+
+          <div class="tree-line">
+            <span class="tree-branch">├──</span>
+            <span class="degree">B.S. Computer Science Engineering</span>
+          </div>
+          <div class="tree-line" style="padding-left:26px;">
+            <span class="school">
+              Jawaharlal Nehru Technological University · Hyderabad, India
+            </span>
+          </div>
+
+          <div class="tree-line">
+            <span class="tree-branch">└──</span>
+            <span class="degree">Diploma in Computer Engineering</span>
+          </div>
+          <div class="tree-line" style="padding-left:26px;">
+            <span class="school">
+              T.R.R. College of Technology · Hyderabad, India
+            </span>
+          </div>
         </div>
       </div>
+
       <div class="reveal">
         <div class="section-head" style="margin-bottom:24px;">
           <h2>Continuing to <em>learn.</em></h2>
         </div>
+
         <div class="cert-item">
-          <span class="c-name"><span class="check">✓</span>Udemy · Web Development Certificate of Completion</span>
+          <span class="c-name">
+            <span class="check">✓</span>
+            Udemy · Web Development Certificate of Completion
+          </span>
           <span class="c-year">TRAINING</span>
         </div>
-        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">Coursework knowledge: Bootstrap 5, JavaScript ES6, jQuery, React.js and Hooks, Node.js, npm, Express.js, EJS, REST APIs, SQL, PostgreSQL, authentication, web design, Bash, Git, GitHub Pages deployment, and Web3 concepts including Internet Computer, token contracts, and NFTs.</p>
+
+        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">
+          Coursework knowledge: Bootstrap 5, JavaScript ES6, jQuery,
+          React.js and Hooks, Node.js, npm, Express.js, EJS, REST APIs,
+          SQL, PostgreSQL, authentication, web design, Bash, Git,
+          GitHub Pages deployment, and Web3 concepts including
+          Internet Computer, token contracts, and NFTs.
+        </p>
+
         <div class="cert-item">
-          <span class="c-name"><span class="check">✓</span>The AI Masterclass 3.0 · Dhruv Rathee Academy</span>
+          <span class="c-name">
+            <span class="check">✓</span>
+            The AI Masterclass 3.0 · Dhruv Rathee Academy
+          </span>
           <span class="c-year">SEP 2026</span>
         </div>
-        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">Training in foundational AI tools, basic prompt writing, AI-assisted poster creation, and practical AI resources.</p>
+
+        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">
+          Training in foundational AI tools, basic prompt writing,
+          AI-assisted poster creation, and practical AI resources.
+        </p>
+
         <div class="cert-item">
-          <span class="c-name"><span class="check">✓</span>Relevant Academic Coursework</span>
+          <span class="c-name">
+            <span class="check">✓</span>
+            Relevant Academic Coursework
+          </span>
           <span class="c-year">ACADEMIC</span>
         </div>
-        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">Software Engineering, Database Systems, Web Development, Software Testing, Data Structures and Algorithms.</p>
+
+        <p style="font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px;">
+          Software Engineering, Database Systems, Web Development,
+          Software Testing, Data Structures and Algorithms.
+        </p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="eyebrow-label mono reveal">// contact</div>
+
     <div class="contact-inner">
-      <div class="reveal"><h2>Let's build<br><em>something that holds.</em></h2></div>
-      <div class="term-line reveal">
-        <span class="prompt">$</span> open <a href="mailto:saadansari0505@gmail.com">mailto:saadansari0505@gmail.com</a><span class="blink"></span>
+      <div class="reveal">
+        <h2>Let's build<br><em>something that holds.</em></h2>
       </div>
+
+      <div class="term-line reveal">
+        <span class="prompt">$</span> open
+        <a href="mailto:saadansari0505@gmail.com">
+          mailto:saadansari0505@gmail.com
+        </a>
+        <span class="blink"></span>
+      </div>
+
       <div class="contact-meta mono reveal">
-        <div><span class="k">Email</span>saadansari0505@gmail.com</div>
-        <div><span class="k">Phone</span>+1 248-703-2378</div>
-        <div><span class="k">Location</span>Farmington, MI 48336</div>
-        <div><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/saad-ansari-mohammed-a12a19285" target="_blank" rel="noopener noreferrer">View profile</a></div>
-        <div><span class="k">GitHub</span><a href="https://github.com/S4adHax" target="_blank" rel="noopener noreferrer">S4adHax</a></div>
-        <div><span class="k">Portfolio</span><a href="https://s4adhax.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Open portfolio</a></div>
+        <div>
+          <span class="k">Email</span>
+          saadansari0505@gmail.com
+        </div>
+
+        <div>
+          <span class="k">Phone</span>
+          +1 248-703-2378
+        </div>
+
+        <div>
+          <span class="k">Location</span>
+          Farmington, MI 48336
+        </div>
+
+        <div>
+          <span class="k">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/saad-ansari-mohammed-a12a19285"
+             target="_blank"
+             rel="noopener noreferrer">View profile</a>
+        </div>
+
+        <div>
+          <span class="k">GitHub</span>
+          <a href="https://github.com/S4adHax"
+             target="_blank"
+             rel="noopener noreferrer">S4adHax</a>
+        </div>
+
+        <div>
+          <span class="k">Portfolio</span>
+          <a href="https://s4adhax.github.io/Portfolio/"
+             target="_blank"
+             rel="noopener noreferrer">Open portfolio</a>
+        </div>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
@@ -560,32 +1081,45 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script>
 (function(){
   const wrap = document.getElementById('canvas-wrap');
   const scene = new THREE.Scene();
 
-  const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
+  const camera = new THREE.PerspectiveCamera(
+    42,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    100
+  );
   camera.position.set(0, 0, 9);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true
+  });
+
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   wrap.appendChild(renderer.domElement);
 
   const ambient = new THREE.AmbientLight(0x1c2530, 1.3);
   scene.add(ambient);
+
   const key = new THREE.PointLight(0x52C7B8, 2.0, 30);
   key.position.set(6, 5, 6);
   scene.add(key);
+
   const rim = new THREE.PointLight(0xE7E2D6, 0.8, 30);
   rim.position.set(-6, -3, -4);
   scene.add(rim);
+
   const fillLight = new THREE.PointLight(0xE8A33D, 0.45, 30);
   fillLight.position.set(0, -6, 4);
   scene.add(fillLight);
 
-  // ---- helpers to draw canvas textures (code editor + floating glyphs) ----
+  // Canvas textures: code editor and floating glyphs.
   function roundRectPath(ctx, x, y, w, h, r){
     ctx.beginPath();
     ctx.moveTo(x + r, y);
@@ -598,7 +1132,9 @@
 
   function makeCodeCardTexture(){
     const c = document.createElement('canvas');
-    c.width = 1024; c.height = 700;
+    c.width = 1024;
+    c.height = 700;
+
     const ctx = c.getContext('2d');
 
     ctx.fillStyle = '#131B24';
@@ -613,6 +1149,7 @@
     ctx.restore();
 
     const dotColors = ['#E8746A', '#E8C34A', '#52C7B8'];
+
     dotColors.forEach((col, i) => {
       ctx.beginPath();
       ctx.fillStyle = col;
@@ -626,11 +1163,23 @@
     ctx.fillText('portfolio.js', c.width / 2, 45);
     ctx.textAlign = 'left';
 
-    const lineColors = ['#52C7B8', '#E8A33D', '#E7E2D6', '#78828C', '#52C7B8', '#E7E2D6', '#E8A33D', '#78828C', '#52C7B8', '#E7E2D6', '#E8A33D'];
-    const widths = [300, 480, 230, 560, 160, 430, 360, 210, 500, 270, 140];
+    const lineColors = [
+      '#52C7B8', '#E8A33D', '#E7E2D6', '#78828C',
+      '#52C7B8', '#E7E2D6', '#E8A33D', '#78828C',
+      '#52C7B8', '#E7E2D6', '#E8A33D'
+    ];
+
+    const widths = [
+      300, 480, 230, 560, 160, 430, 360, 210, 500, 270, 140
+    ];
+
     let y = 118;
+
     widths.forEach((w, i) => {
-      const indent = (i % 3 === 0) ? 56 : (i % 3 === 1 ? 104 : 152);
+      const indent = (i % 3 === 0)
+        ? 56
+        : (i % 3 === 1 ? 104 : 152);
+
       ctx.fillStyle = lineColors[i % lineColors.length];
       roundRectPath(ctx, indent, y, w, 20, 5);
       ctx.fill();
@@ -642,32 +1191,65 @@
 
   function makeGlyphTexture(text, color){
     const c = document.createElement('canvas');
-    c.width = 256; c.height = 256;
+    c.width = 256;
+    c.height = 256;
+
     const ctx = c.getContext('2d');
     ctx.font = '600 108px "IBM Plex Mono", monospace';
     ctx.fillStyle = color;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(text, 128, 140);
+
     return new THREE.CanvasTexture(c);
   }
 
-  // ---- Signature: a floating code-editor card orbited by code-symbol glyphs ----
+  // Floating code-editor card orbited by code-symbol glyphs.
   const group = new THREE.Group();
   scene.add(group);
 
   const cardTex = makeCodeCardTexture();
   cardTex.needsUpdate = true;
-  const cardW = 3.9, cardH = cardTex.image.height / cardTex.image.width * cardW;
+
+  const cardW = 3.9;
+  const cardH = cardTex.image.height / cardTex.image.width * cardW;
   const cardGeo = new THREE.BoxGeometry(cardW, cardH, 0.14);
-  const edgeMatDark = new THREE.MeshPhongMaterial({ color: 0x0D1117, shininess: 40, specular: 0x223 });
-  const frontMat = new THREE.MeshPhongMaterial({ map: cardTex, shininess: 30, specular: 0x111 });
-  const cardMaterials = [edgeMatDark, edgeMatDark, edgeMatDark, edgeMatDark, frontMat, edgeMatDark];
+
+  const edgeMatDark = new THREE.MeshPhongMaterial({
+    color: 0x0D1117,
+    shininess: 40,
+    specular: 0x223
+  });
+
+  const frontMat = new THREE.MeshPhongMaterial({
+    map: cardTex,
+    shininess: 30,
+    specular: 0x111
+  });
+
+  const cardMaterials = [
+    edgeMatDark,
+    edgeMatDark,
+    edgeMatDark,
+    edgeMatDark,
+    frontMat,
+    edgeMatDark
+  ];
+
   const card = new THREE.Mesh(cardGeo, cardMaterials);
   group.add(card);
 
-  const glowGeo = new THREE.PlaneGeometry(cardW * 1.12, cardH * 1.12);
-  const glowMat = new THREE.MeshBasicMaterial({ color: 0x52C7B8, transparent: true, opacity: 0.06 });
+  const glowGeo = new THREE.PlaneGeometry(
+    cardW * 1.12,
+    cardH * 1.12
+  );
+
+  const glowMat = new THREE.MeshBasicMaterial({
+    color: 0x52C7B8,
+    transparent: true,
+    opacity: 0.06
+  });
+
   const glowPlane = new THREE.Mesh(glowGeo, glowMat);
   glowPlane.position.z = -0.1;
   group.add(glowPlane);
@@ -684,45 +1266,82 @@
   ];
 
   const glyphs = [];
+
   glyphDefs.forEach((def, i) => {
     const tex = makeGlyphTexture(def.text, def.color);
-    const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.88 });
+
+    const mat = new THREE.SpriteMaterial({
+      map: tex,
+      transparent: true,
+      opacity: 0.88
+    });
+
     const sprite = new THREE.Sprite(mat);
     const scale = def.color === '#E8A33D' ? 0.62 : 0.5;
     sprite.scale.set(scale, scale, 1);
 
     const radius = 3.1 + Math.random() * 1.3;
-    const theta = (i / glyphDefs.length) * Math.PI * 2 + Math.random() * 0.4;
+    const theta = (i / glyphDefs.length) * Math.PI * 2
+      + Math.random() * 0.4;
+
     const y = (Math.random() - 0.5) * 3.4;
-    const pos = new THREE.Vector3(Math.cos(theta) * radius, y, Math.sin(theta) * radius * 0.6 - 0.5);
+
+    const pos = new THREE.Vector3(
+      Math.cos(theta) * radius,
+      y,
+      Math.sin(theta) * radius * 0.6 - 0.5
+    );
+
     sprite.position.copy(pos);
-    sprite.userData = { basePos: pos.clone(), speed: 0.3 + Math.random() * 0.5, offset: Math.random() * Math.PI * 2, isSignal: def.color === '#E8A33D' };
+
+    sprite.userData = {
+      basePos: pos.clone(),
+      speed: 0.3 + Math.random() * 0.5,
+      offset: Math.random() * Math.PI * 2,
+      isSignal: def.color === '#E8A33D'
+    };
+
     group.add(sprite);
     glyphs.push(sprite);
   });
 
-  // ---- Ambient particles ----
+  // Ambient particles.
   const particleCount = 200;
   const particleGeo = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
+
   for (let i = 0; i < particleCount; i++) {
     positions[i * 3] = (Math.random() - 0.5) * 26;
     positions[i * 3 + 1] = (Math.random() - 0.5) * 16;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 14 - 4;
   }
-  particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const particleMat = new THREE.PointsMaterial({ color: 0x5C6570, size: 0.026, transparent: true, opacity: 0.5 });
+
+  particleGeo.setAttribute(
+    'position',
+    new THREE.BufferAttribute(positions, 3)
+  );
+
+  const particleMat = new THREE.PointsMaterial({
+    color: 0x5C6570,
+    size: 0.026,
+    transparent: true,
+    opacity: 0.5
+  });
+
   const particles = new THREE.Points(particleGeo, particleMat);
   scene.add(particles);
 
-  // ---- Interaction ----
-  let targetRotX = 0, targetRotY = 0;
+  // Interaction.
+  let targetRotX = 0;
+  let targetRotY = 0;
+
   window.addEventListener('mousemove', (e) => {
     const mx = (e.clientX / window.innerWidth - 0.5) * 2;
     const my = (e.clientY / window.innerHeight - 0.5) * 2;
     targetRotY = mx * 0.45;
     targetRotX = my * 0.22;
   });
+
   window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) {
       const mx = (e.touches[0].clientX / window.innerWidth - 0.5) * 2;
@@ -731,13 +1350,17 @@
       targetRotX = my * 0.22;
     }
   }, { passive: true });
+
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
   let autoRot = 0;
   let introProgress = 0;
 
@@ -747,22 +1370,41 @@
 
     if (introProgress < 1) {
       introProgress += 0.014;
-      const ease = 1 - Math.pow(1 - Math.min(introProgress, 1), 3);
+      const ease = 1 - Math.pow(
+        1 - Math.min(introProgress, 1),
+        3
+      );
+
       group.scale.setScalar(0.5 + ease * 0.5);
       group.rotation.y = -Math.PI * 0.55 * (1 - ease);
     }
 
     if (!reduceMotion) autoRot += 0.0016;
 
-    group.rotation.y += (targetRotY + autoRot - group.rotation.y) * 0.04;
-    group.rotation.x += (targetRotX - group.rotation.x) * 0.04;
+    group.rotation.y += (
+      targetRotY + autoRot - group.rotation.y
+    ) * 0.04;
+
+    group.rotation.x += (
+      targetRotX - group.rotation.x
+    ) * 0.04;
 
     glyphs.forEach(sprite => {
-      const { basePos, speed, offset, isSignal } = sprite.userData;
-      const wobble = 1 + Math.sin(t * 0.0008 * speed + offset) * 0.1;
+      const {
+        basePos,
+        speed,
+        offset,
+        isSignal
+      } = sprite.userData;
+
+      const wobble = 1
+        + Math.sin(t * 0.0008 * speed + offset) * 0.1;
+
       sprite.position.copy(basePos).multiplyScalar(wobble);
+
       if (isSignal) {
-        sprite.material.opacity = 0.55 + Math.sin(t * 0.004) * 0.35;
+        sprite.material.opacity = 0.55
+          + Math.sin(t * 0.004) * 0.35;
       }
     });
 
@@ -772,16 +1414,19 @@
 
     renderer.render(scene, camera);
   }
+
   requestAnimationFrame(animate);
 })();
 
-// scroll reveal (drives the About/Skills/Experience/Education/Contact section animations too)
+// Scroll reveal.
 (function () {
   const items = document.querySelectorAll('.reveal');
+
   if (!('IntersectionObserver' in window)) {
     items.forEach(el => el.classList.add('in-view'));
     return;
   }
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -789,7 +1434,11 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
   items.forEach(el => io.observe(el));
 })();
 </script>
